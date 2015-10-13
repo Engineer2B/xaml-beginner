@@ -6,7 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <Page.DataContext>
+        <StaticResource ResourceKey="DataManager" />
+    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
@@ -22,8 +24,8 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Special Request:" />
         <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Order Items:" />
-        <ListView Grid.Row="1" Grid.RowSpan="3" Grid.Column="0"></ListView>
-        <ListView Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"></ListView>
+        <ListView Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" ItemsSource="{Binding MenuItems}"></ListView>
+        <ListView Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" ItemsSource="{Binding CurrentlySelectedMenuItems}"></ListView>
         <Button Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Content="**Add to Order**" />
         <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Content="**Submit Order**" />
         <AppBar Grid.Row="0" Grid.ColumnSpan="3">
