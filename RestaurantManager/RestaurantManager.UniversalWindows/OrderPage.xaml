@@ -5,7 +5,7 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="1000">
+    mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -22,7 +22,12 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Special Request:" />
         <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Order Items:" />
-        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="**Add to Order**" />
-        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Text="**Submit Order**" />
+        <ListView Grid.Row="1" Grid.RowSpan="3" Grid.Column="0"></ListView>
+        <ListView Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"></ListView>
+        <Button Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Content="**Add to Order**" />
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Content="**Submit Order**" />
+        <AppBar Grid.Row="0" Grid.ColumnSpan="3">
+            <AppBarButton Icon="Home" Label="Home" Click="AppBarButton_Click" />
+        </AppBar>
     </Grid>
 </Page>
